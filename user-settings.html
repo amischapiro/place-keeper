@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-settings</title>
+</head>
+<body>
+    <form id="userform" onsubmit="submit(event)">
+       <div> Set a background color: <input type="color" id="bgcolor" name="bgcolor" ></div>
+       <div> Set text color: <input type="color" id="txtcolor" name="txtcolor"></div>
+       <div>Enter date of birth <input type="date" id="date" name="date"></div>
+       <div>Enter time of birth <input type="time" id="time" name="time"></div>
+       <div>E-mail <input type="email" name="email" id="email" required></div>
+       <div>Age <input type="range" name="age" id="age" min="18" max="120" onchange="showAge(this.value)">
+       <span id="sAge">26</span></div>
+       <button>Set</button>
+
+
+    </form>
+
+    <script>
+        function submit(ev){
+            ev.preventDefault()
+        }
+        function showAge(newVal) {
+            document.getElementById("sAge").innerHTML = newVal;
+        }
+    </script>
+</body>
+</html>
